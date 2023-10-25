@@ -105,11 +105,6 @@ export class LoginPageComponent implements OnInit{
               // Los datos coinciden, el usuario puede iniciar sesión
               console.log('Inicio de sesión exitoso');
 
-              this.http.post('http://localhost:3000/api/login', loginData, { headers }).subscribe(
-                (response: any) => {
-
-                   //imprimimos los tokens para verificar que funcionen
-                   console.log('access_token:', response.token);
 
                     //redirigir al usuario
                     this.router.navigate(['/inicio']);
@@ -118,20 +113,10 @@ export class LoginPageComponent implements OnInit{
                     this.openModalEjemplo(this.modalTemplate);
 
                     return;
-                },
-                //callback para manejar errores
-                (error) => {
-                    console.error('Error', error);
 
-                    // Restablecer el formulario para borrar los datos incorrectos
-                    this.loginForm.reset();
 
-                    // Mostrar el controlador error personalizado en verdadero
-                    this.showCustomError = true;
 
-                    return;
-                }
-            )
+
 
             }
           }
