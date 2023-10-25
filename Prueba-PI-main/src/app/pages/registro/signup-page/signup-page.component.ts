@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ModalService } from '../../../shared/services/modal.service';
 import { ModalEjemploService } from 'src/app/shared/services/modal-ejemplo.service';
+import { Router } from '@angular/router';
 
 
 // Importa jQuery y Select2
@@ -62,7 +63,8 @@ export class SignupPageComponent implements OnInit {
     { value: 'siblings', label: '¿Cuántos hermanos tienes?' }
   ];
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private modalService: ModalService, private modalServiceEjemplo: ModalEjemploService) {
+
+  constructor(private fb: FormBuilder, private http: HttpClient, private modalService: ModalService, private modalServiceEjemplo: ModalEjemploService, private router: Router) {
     this.registerForm = this.fb.group({
       username: ['', Validators.required],
       name: ['', Validators.required],
@@ -76,15 +78,13 @@ export class SignupPageComponent implements OnInit {
         Validators.required,
         this.passwordValidator // Agregar la validación personalizada aquí
       ])],
-      answer: ['', Validators.required],
-      question: ['', Validators.required],
       checkterms: ['', Validators.required],
     });
 
   }
 
   openModal(modalTemplate:TemplateRef<any>){
-    this.modalService.open(modalTemplate, {size: 'lg', title:'Términos y Condiciones The Nexus Battles II'})
+    this.modalService.open(modalTemplate, {size: 'lg', title:'Términos y condiciones para el equipo de desarrollo de "CodeMania"'})
     .subscribe((action) => {
       console.log('ModalAction', action)
     })
@@ -199,8 +199,6 @@ export class SignupPageComponent implements OnInit {
 
       const formData = this.registerForm.value;
 
-
-
       const registerData = {
         username: formData.username,
         name: formData.name,
@@ -219,7 +217,10 @@ export class SignupPageComponent implements OnInit {
 
       // Abre el modal de confirmacion
       this.openModalEjemplo(this.modalTemplate);
-      
+
+      //Redirigir al login
+      this.router.navigate(['/inicio']);
+
     }
   }
 }

@@ -1,173 +1,57 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 
-.Fondo {
-  background-image: url('../../../../assets/images/fondo-inicio.jpg');
+#contenedor-vitrina {
+  background-color: #111A2B;
+  height: calc(125vh - 100px);
+  
+  /* height: 100%; */
+}
+
+.fondt{
+  background-color: #111a2b;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+
+  z-index: 2;
+}
+
+#username, #password{
+  width: 600px;
+  height: 50px;
+  border-radius: 11px;
+}
+
+.cajahome{
+
+  background-color: #111a2b;
+  height: 100%;
+  z-index: 1;
+}
+
+.bienvenida{
+  background-image: url('../../../../assets/images/homecel.png');
   background-size: cover;
-  height: calc(125vh - 100px); /* Toma el 100% del viewport height y resta la altura del header */
-  /* Toma el 100% del viewport height y resta la altura del header */
-  overflow-x: hidden;
-  overflow: hidden;
+  height: 450px;
+  width: 450px;
+  z-index: 2;
 }
 
-::-webkit-scrollbar{
-  overflow: hidden;
-}
-
-
-.box {
-  background-color: rgba(240, 240, 240, 0.8); /* Ajustar el valor alfa aquí */
-  padding: 50px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.inner-box {
-  background-color: #ffffff75;
-  padding: 50px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-
-.inner-box h2 {
-
-  font-size: 50px;
-  margin: 0;
-}
-.inner-box h3 {
-
-  font-size: 25px;
-  margin: 0;
-  text-align:center;
-  color: rgb(83, 82, 82);
-
-}
-
-.inc{
-
-  font-size: 2;
-}
-
-p{
-  font-size: 20px;
-  text-align: start;
-
-}
-/* Alinea los elementos label y los campos de entrada uno debajo del otro */
-
-.BTN{
-
-  text-align: center;
-  margin-right: 50px;
-
-
-}
-form{
-  display: flex;
-  flex-direction: column;
-  margin: 2px;
-  align-self: start;
-  font-size: 30px;
-  margin-right: 300px;
-  margin-top: 40px;
-
-}
-#username{
-  width: 400px;
-  height: 25px;
-  border-radius: 10px;
-  font-size: 16px;
-
-}
-#password{
-  width: 400px;
-  height: 25px;
-  border-radius: 10px;
-}
 .btnenter{
 
-  border-radius: 10px;
-  border: solid 2px;
-  background-color: #CEB25D;
-  height: 32px;
-  font-size: 18px;
-  width: 45%;
+  border-radius: 21px;
+  background-color: #374154;
+  height: 38px;
+  font-size: 17px;
+  width: 150px;
   cursor: pointer;
   transition: transform.5s;
   margin-top: 10px;
   margin-bottom: 10px;
+  font-weight: 500;
+  transition: all 0.5s ease-in-out;
 }
+
 .btnenter:hover{
-
-  transform: scale(1.2);
-}
-
-#linkRecovery{
-  color: rgb(117, 44, 44);
-
-}
-#linkRecovery:hover{
-  color: rgb(150, 40, 40);
-  text-decoration: underline;
-}
-#linkRecovery:focus{
-  color: #97791d
-}
-
-
-.imglogo{
-
-  position:absolute;top:2px;right:0px;bottom:0;left:540px;
-  width: 240px;
-  transition: transform.5s;
-  cursor: pointer;
-}
-
-
-.imglogo2{
-
-  position:absolute;top:337px;right:0px;bottom:0px;left:580px;
-  width: 240px;
-  opacity: 0.4;
-}
-
-/* Creado Exitosamente */
-.container3 h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.content {
-  background-color: #fff;
-  border-radius: 5px;
-
-}
-
-.content h2 {
-  font-size: 32px;
-  margin-top: 15px;
-}
-
-/* Ejemplo de estilo para los párrafos de contenido */
-.content p {
-  margin-bottom: 10px;
-  line-height: 1.5;
-}
-
-/* Ejemplo de estilo para las viñetas de listas */
-.content ul {
-  list-style-type: disc;
-  margin-left: 20px;
-}
-
-/* Ejemplo de estilo para los enlaces */
-.content a {
-  color: #007bff;
-  text-decoration: underline;
+  background-color: #2d3542;
 }

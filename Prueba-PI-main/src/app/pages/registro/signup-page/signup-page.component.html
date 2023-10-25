@@ -1,144 +1,158 @@
 
-<main class="Fondo">
-
-  <div class="flex items-center justify-center mt-[5%]">
-    <div class="box">
-      <div class="inner-box">
-          <div class="image-container">
-
-              <a href="#"><img class="imglogo" src="../img/Logo.png" alt=""></a>
-              <img class="imglogo2" src="../../../../assets/images/caballero3.png" alt="">
-
-              <form class="" id="formulario" [formGroup]="registerForm" (ngSubmit)="onSubmit()" method="post">
-
-                <div class="inc mb-8">
-                    <h2>Registro</h2>
-
-                </div>
-
-                    <label for="username" >Nickname</label>
-                    <input class="text-sm" type="text" id="inputfield" formControlName="username" class="
-                    invalid:border-red-600 invalid:text-red-600
-                    focus:invalid:border-red-600 focus:invalid:ring-red-600" required>
-                    <mat-error class="text-[10px] text-red-600 -mt-[6px] ml-3 mb-2">{{ getErrorMessage('username') }}</mat-error>
+<main id="contenedor-vitrina" class="relative bg-center">
 
 
-                    <!-- Input Nombre -->
-                    <label for="name" >Nombre</label>
-                    <input type="text" id="inputfield" formControlName="name" class="
-                    invalid:border-red-600 invalid:text-red-600
-                    focus:invalid:border-red-600 focus:invalid:ring-red-600" required>
-                    <mat-error class="text-[10px] text-red-600 -mt-[6px] ml-3 mb-2">{{ getErrorMessage('name') }}</mat-error>
-
-                    <!-- Input Apellido -->
-                    <label for="last_name" >Apellido</label>
-                    <input type="text" id="inputfield" formControlName="last_name" class="
-                    invalid:border-red-600 invalid:text-red-600
-                    focus:invalid:border-red-600 focus:invalid:ring-red-600" required>
-                    <mat-error class="text-[10px] text-red-600 -mt-[6px] ml-3 mb-2">{{ getErrorMessage('last_name') }}</mat-error>
-
-                    <!-- Input Correo -->
-                    <label for="email">Correo</label>
-                    <input type="email" id="inputfield" formControlName="email" class="
-                    invalid:border-red-600 invalid:text-red-600
-                    focus:invalid:border-red-600 focus:invalid:ring-red-600"
-                    required>
-                    <mat-error class="text-[10px] text-red-600 -mt-[6px] ml-3 mb-2">{{ getErrorMessage('email') }}</mat-error>
-
-                    <!-- Input Contraseña -->
-                    <div class="flex items-start">
-
-                      <label for="password">Contraseña</label>
-                      <button
-                      class="ml-3"
-                      mat-icon-button
-                      matSuffix
-                      (click)="hide = !hide"
-                      [attr.aria-label]="'Hide password'"
-                      [attr.aria-pressed]="hide">
-                      <mat-icon class="ml-3">{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
-                      </button>
-
-                    </div>
-
-                    <input
-                      type="password"
-                      id="inputfield"
-                      [type]="hide ? 'password' : 'text'"
-                      formControlName="password"
-                      class="overflow-y-hidden invalid:border-red-600 invalid:text-red-600 focus:invalid:border-red-600 focus:invalid:ring-red-600"
-                      required
-                    />
+  <div class="cajahome flex flex-col justify-center items-center -mt-16">
 
 
-                    <!-- Mostrar el mensaje de error específico de la contraseña -->
-                    <mat-error
-                      class="text-[10px] text-red-600 -mt-[6px] ml-3 mb-2 max-w-[290px]"
-                      *ngIf="getErrorMessage('password')"
-                    >
-                      {{ getErrorMessage('password') }}
-                    </mat-error>
+  <div id="logoNexusBattle" class="relative mb-10">
+    <a href="#" class="flex items-center space-x-4">
+      <img src="../../../../assets/images/Escudo_UPB.png" class="w-[100px] h-[100px]" alt="Nexus Battle II Logo"/>
+      <p class="text-white text-[60px]">UPB</p>
+    </a>
+  </div>
+
+    <div class="flex z-10 space-x-2 text-[12px] mb-12">
+      <h1 class="text-[#737A89] hover:text-[#8990a0] cursor-pointer"><a href="/login">Iniciar Sesion</a></h1><h1 class="text-[#737A89]">or</h1><h1 class="text-[#6997EB]" >Registro</h1>
+    </div>
+
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" method="post">
+
+          <div class="flex flex-col">
+            <label for="username" class="text-[#6279A4] text-[21px] mb-2">Nombre</label>
+            <input type="text" id="username" formControlName="name" required
+            class="
+                    invalid:border-red-400 invalid:text-red-400
+                    focus:invalid:border-red-400 focus:invalid:ring-red-400" required>
+                    <mat-error class="text-[10px] text-red-400 mt-1 ml-3 mb-2">{{ getErrorMessage('name') }}</mat-error>
+          </div>
+
+          <div class="flex flex-col">
+            <label for="username" class="text-[#6279A4] text-[21px] mb-2">Apellido</label>
+            <input type="text" id="username" formControlName="last_name" required
+            class="
+                    invalid:border-red-400 invalid:text-red-400
+                    focus:invalid:border-red-400 focus:invalid:ring-red-400" required>
+                    <mat-error class="text-[10px] text-red-400 mt-1 ml-3 mb-2">{{ getErrorMessage('last_name') }}</mat-error>
+          </div>
+
+          <div class="flex flex-col">
+            <label for="username" class="text-[#6279A4] text-[21px] mb-2">Usuario</label>
+            <input type="text" id="username" formControlName="username" required
+            class="
+                    invalid:border-red-400 invalid:text-red-400
+                    focus:invalid:border-red-400 focus:invalid:ring-red-400" required>
+                    <mat-error class="text-[10px] text-red-400 mt-1 ml-3 mb-2">{{ getErrorMessage('username') }}</mat-error>
+          </div>
+
+
+          <div class="flex flex-col">
+            <label for="email" class="text-[#6279A4] text-[21px] mb-2">Correo</label>
+            <input type="email" id="password" formControlName="email" required
+            class="
+            invalid:border-red-400 invalid:text-red-400
+            focus:invalid:border-red-400 focus:invalid:ring-red-400" required>
+            <mat-error class="text-[10px] text-red-400 mt-1 ml-3 mb-2">{{ getErrorMessage('email') }}</mat-error>
+          </div>
+
+          <div class="flex flex-col">
+            <label for="password" class="text-[#6279A4] text-[21px] mb-2">Contraseña</label>
+            <input type="password" id="password" formControlName="password" required
+            class="
+            invalid:border-red-400 invalid:text-red-400
+            focus:invalid:border-red-400 focus:invalid:ring-red-400" required>
+            <mat-error class="text-[10px] text-red-400 mt-1 ml-3 mb-2">{{ getErrorMessage('password') }}</mat-error>
+          </div>
 
 
 
-                    <!-- Select Pregunta Seguridad -->
-                    <label for="question">Pregunta Seguridad</label>
-                    <select formControlName="question" id="inputfieldPregunta" class="
-                    invalid:border-red-600 invalid:text-red-600
-                    focus:invalid:border-red-600 focus:invalid:ring-red-600">
-                      <option *ngFor="let question of securityQuestions" [value]="question.value">{{ question.label }}</option>
-                    </select>
-                    <mat-error class="text-[10px] text-red-600 -mt-[6px] ml-3 mb-2">{{ getErrorMessage('question') }}</mat-error>
+          <div class="terms flex items-start space-x-2 mt-3">
+            <input type="checkbox" id="checkbox" formControlName="checkterms" class="w-5" required>
+            <div class="text-[16px] mt-[2px] text-[#737A89]">Acepto los <a (click)="openModal(modalTemplate)" class="terlink text-[#6997EB] hover:text-blue-400 cursor-pointer underline" >terminos y condiciones</a></div>
+          </div>
 
 
-                    <label for="answer">Respuesta</label>
-                    <input type="text" id="inputfield" formControlName="answer" class="respuestaInput" required>
-                    <mat-error class="text-[10px] text-red-600 -mt-[6px] ml-3 mb-2">{{ getErrorMessage('answer') }}</mat-error>
 
-                    <div class="terms flex items-start space-x-2 mt-3">
-                      <input type="checkbox" id="checkbox" formControlName="checkterms" class="w-5" required>
-                      <div class="text-[16px] mt-[2px]">Acepto los <a (click)="openModal(modalTemplate)" class="terlink text-blue-800 hover:text-blue-600 cursor-pointer underline" >terminos y condiciones</a></div>
-                    </div>
+          <div class="flex items-center justify-around mt-6">
 
-                    <div class="BTN">
 
-                      <button class="btnenter" type="submit" (click)="mostrarMensaje()" [disabled]="isSubmitting">Registrarte</button>
+            <button class="btnenter mr-10  text-white" type="submit" (click)="mostrarMensaje()" [disabled]="isSubmitting">Registrarse</button>
 
-                    </div>
+          </div>
+      </form>
+    </div>
 
+
+
+</main>
 
                     <ng-template #modalTemplate>
-                      <div class="container3 overflow-y-auto max-h-[600px] z-10">
+                      <div class="container3 overflow-y-auto max-h-[601px] z-10">
                         <div class="content">
-                            <p>De acuerdo con la Ley Estatutaria 1581 de 2012 de Colombia, nos comprometemos a proteger los datos personales proporcionados por nuestros usuarios.</p>
+                          <h2>Introducción</h2>
+                          <p>Los presentes términos y condiciones regulan el acceso y uso de la aplicación "CodeMania", desarrollada por la Facultad de Ingeniería de Sistemas e Informática de la Universidad Pontificia Bolivariana Seccional Bucaramanga.</p>
 
-                            <h2>Recopilación de Datos</h2>
-                            <p>Recopilamos información personal como nombres, apellidos, email y medio de pago para fines de identificación, contacto y/o compras online.</p>
-                            <p>Al implementar como medio de pago la plataforma externa de Paypal, debe referirse a los <a href="https://thenexusbattles2.cloud/static/terminos-paypal.pdf">Terminos y condiciones de Paypal</a></p>
-                            <h2>Uso de Datos</h2>
-                            <p>Los datos recopilados se utilizarán únicamente para los fines establecidos en nuestros servicios y no se compartirán con terceros sin su consentimiento.</p>
-                            <p>Debe tener un cuenta que las acciones que realice en la plataforma estan en constante administración y si se considera que infringe las normas de THE NEXUS BATTLES II, usted puede recibir sanciones que van desde bloqueos temporales del servicio como la inhabilitación de su cuenta.</p>
+                          <h2>Definiciones</h2>
+                          <p>Para los efectos de los presentes términos y condiciones, se entenderá por:</p>
+                          <p><strong>"Aplicación":</strong> La aplicación "CodeMania", desarrollada por la Facultad de Ingeniería de Sistemas e Informática de la Universidad Pontificia Bolivariana Seccional Bucaramanga.</p>
+                          <p><strong>"Usuario":</strong> Toda persona que acceda y utilice la Aplicación.</p>
+                          <p><strong>"Términos y condiciones":</strong> Los presentes términos y condiciones.</p>
 
-                            <h2>Derechos del Titular</h2>
-                            <p>Los usuarios tienen derecho a acceder, corregir y eliminar sus datos personales almacenados en nuestra plataforma.</p>
+                          <h2>Acceso a la Aplicación</h2>
+                          <p>El acceso a la Aplicación es gratuito. Para acceder a la Aplicación, el Usuario deberá registrarse en la misma.</p>
 
-                            <h2>Seguridad</h2>
-                            <p>Implementamos medidas de seguridad para proteger los datos de los usuarios contra el acceso no autorizado a su información y el uso indebido de la misma.</p>
+                          <h2>Registro</h2>
+                          <p>Para registrarse en la Aplicación, el Usuario deberá proporcionar los siguientes datos:</p>
+                          <p><strong>Nombre completo</strong></p>
+                          <p><strong>Correo electrónico</strong></p>
+                          <p><strong>Nombre de usuario</strong></p>
+                          <p><strong>Contraseña</strong></p>
+                          <p>El Usuario es responsable de la veracidad y exactitud de los datos proporcionados en el registro.</p>
 
-                            <h2>Modificaciones a las condiciones de uso</h2>
-                            <p>THE NEXUS BATTLES II se reservará el derecho de modificar las Políticas de Privacidad y de Tratamiento de Datos Personales aquí contenidas a su libre elección y en cualquier momento, cualquier cambio será informado y publicado oportunamente en la plataforma. Por ende, el Usuario se compromete a revisar periódicamente esta sección para estar informado de tales modificaciones y cada nuevo acceso del usuario a la página será considerado una aceptación tácita de las nuevas condiciones.</p>
+                          <h2>Uso de la Aplicación</h2>
+                          <p>El Usuario podrá utilizar la Aplicación para los siguientes fines:</p>
+                          <p>- Acceder a información sobre los Proyectos Integradores de la Facultad de Ingeniería de Sistemas e Informática de la Universidad Pontificia Bolivariana Seccional Bucaramanga.</p>
+                          <p>- Divulgar los resultados de sus proyectos.</p>
+                          <p>- Participar en Jornadas de Socialización de Proyectos.</p>
+                          <p>El Usuario se compromete a utilizar la Aplicación de manera responsable y adecuada.</p>
 
-                            <h2>Consentimiento</h2>
-                            <p>Al utilizar nuestros servicios, usted garantiza que es mayor de dieciocho (18) años de edad y acepta nuestros términos y la recopilación de sus datos según lo establecido en esta política.</p>
+                          <h2>Protección de datos personales</h2>
+                          <p>La Facultad de Ingeniería de Sistemas e Informática de la Universidad Pontificia Bolivariana Seccional Bucaramanga se compromete a proteger los datos personales de los Usuarios.</p>
+                          <p>Los datos personales de los Usuarios serán utilizados exclusivamente para los fines establecidos en los presentes términos y condiciones.</p>
 
-                            <p>Para mas información, consulte la <a href="https://thenexusbattles2.cloud/static/Ley_1581_de_2012.pdf">Ley 1581 de 2012</a>.</p>
+                          <h2>Seguridad</h2>
+                          <p>La Facultad de Ingeniería de Sistemas e Informática de la Universidad Pontificia Bolivariana Seccional Bucaramanga ha adoptado las medidas de seguridad necesarias para proteger los datos personales de los Usuarios.</p>
+
+                          <h2>Modificación de los términos y condiciones</h2>
+                          <p>La Facultad de Ingeniería de Sistemas e Informática de la Universidad Pontificia Bolivariana Seccional Bucaramanga se reserva el derecho a modificar los presentes términos y condiciones en cualquier momento.</p>
+
+                          <h2>Denuncias</h2>
+                          <p>Si el Usuario tiene alguna queja o denuncia sobre la Aplicación, podrá comunicarla a la Facultad de Ingeniería de Sistemas e Informática de la Universidad Pontificia Bolivariana Seccional Bucaramanga a través del correo electrónico Juan.meza.2021@upb.edu.co</p>
+
+                          <h2>Jurisdicción</h2>
+                          <p>Los presentes términos y condiciones se regirán por las leyes de la República de Colombia.</p>
+
+                          <h2>Consentimiento</h2>
+                          <p>Al registrarse en la Aplicación, el Usuario acepta los presentes términos y condiciones.</p>
+
+                          <h2>Ejemplos de aplicación</h2>
+                          <p>Los siguientes son algunos ejemplos de cómo se podrían aplicar los términos y condiciones en el login y el register de la aplicación "CodeMania":</p>
+                          <p>En el login:</p>
+                          <p>- El Usuario deberá proporcionar su nombre de usuario y contraseña para iniciar sesión.</p>
+                          <p>- El Usuario deberá confirmar su identidad mediante un código de verificación enviado a su correo electrónico.</p>
+                          <p>En el register:</p>
+                          <p>- El Usuario deberá proporcionar los datos requeridos, como su nombre completo, correo electrónico, nombre de usuario y contraseña.</p>
+                          <p>- El Usuario deberá confirmar su identidad mediante un código de verificación enviado a su correo electrónico.</p>
+                          <p>- El Usuario deberá aceptar los términos y condiciones.</p>
+                          <p>Estos son solo algunos ejemplos, y el equipo de desarrollo de "CodeMania" podrá adaptarlos según sus necesidades específicas.</p>
+
                         </div>
                     </div>
                     </ng-template>
 
 
                     <ng-template #modalEjemplo>
-                      <div class="container3 overflow-y-auto max-h-[600px] z-10">
+                      <div class="container3 overflow-y-auto max-h-[601px] z-10">
                         <div class="flex flex-col items-center">
                           <img src="../../../../assets/images/success.png" class="w-[175px] h-[175px] text-center">
                           <p class="text-center font-medium text-[50px]">¡Exito!</p>
@@ -149,10 +163,3 @@
                     </ng-template>
 
 
-                    <br>
-                  </form>
-          </div>
-      </div>
-    </div>
-  </div>
-</main>

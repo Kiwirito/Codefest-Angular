@@ -1,5 +1,64 @@
 
-        <main class="Fondo">
+<main id="contenedor-vitrina" class="relative bg-center">
+
+
+  <!-- Contenido -->
+  <div class="cajahome flex flex-col justify-center items-center -mt-16">
+
+
+  <div id="logoNexusBattle" class="relative mb-10">
+    <a href="#" class="flex items-center space-x-4">
+      <img src="../../../../assets/images/Escudo_UPB.png" class="w-[100px] h-[100px]" alt="Nexus Battle II Logo"/>
+      <p class="text-white text-[60px]">UPB</p>
+    </a>
+  </div>
+
+    <div class="flex z-10 space-x-2 text-[12px] mb-12">
+      <h1 class="text-[#6997EB]">Iniciar Sesion</h1><h1 class="text-[#737A89]">or</h1><h1 class="text-[#737A89] hover:text-[#8990a0] cursor-pointer" ><a href="/register">Registro</a></h1>
+    </div>
+
+        <form [formGroup]="loginForm"(ngSubmit)="onSubmit()">
+
+          <div class="flex flex-col">
+            <label for="username" class="text-[#6279A4] text-[21px] mb-2">Usuario</label>
+            <input type="text" id="username" formControlName="username" required
+            [ngClass]="{'invalid:border-red-600': showCustomError, 'focus:invalid:border-red-600 focus:invalid:ring-red-600': showCustomError}">
+          </div>
+          <br>
+          <br>
+
+          <div class="flex flex-col">
+            <label for="password" class="text-[#6279A4] text-[21px] mb-2">Contraseña</label>
+            <input type="password" id="password" formControlName="password" required
+            [ngClass]="{'invalid:border-red-600': showCustomError, 'focus:invalid:border-red-600 focus:invalid:ring-red-600': showCustomError}">
+          </div>
+
+
+
+          <div class="flex items-center justify-around mt-6">
+
+            <mat-error class="text-[16px] text-red-400  hover:underline max-w-[400px] text-center">
+              {{ getErrorMessage() }} <a href="/recovery" class="text-[#546586] " id="linkRecovery" >¿Olvidaste tu contraseña? Recupérala aquí.</a>
+            </mat-error>
+
+            <button class="btnenter mr-10  text-white" type="submit" (click)="showSavedData()">Iniciar Sesión</button>
+
+          </div>
+      </form>
+    </div>
+
+
+
+
+
+
+
+</main>
+
+
+
+
+        <!-- <main class="Fondo">
 
 
             <div class="flex items-center justify-center mt-[5%]">
@@ -9,7 +68,7 @@
                             <h2>Iniciar Sesión</h2>
                             <h3>Ingresa tus datos</h3>
                         </div>
-                        <!-- Formulario Login -->
+
                         <form [formGroup]="loginForm"(ngSubmit)="onSubmit()">
                             <label for="username" >Nombre Usuario</label>
                             <input type="text" id="username" formControlName="username" required
@@ -19,12 +78,12 @@
                             <input type="password" id="password" formControlName="password" required
                             [ngClass]="{'invalid:border-red-600': showCustomError, 'focus:invalid:border-red-600 focus:invalid:ring-red-600': showCustomError}">
 
-                            <!-- MatError para mostrar el mensaje personalizado -->
+
                              <mat-error class="text-[12px] text-red-600 mt-2 ml-3 max-w-[390px]">
                               {{ getErrorMessage() }} <a href="/recovery" id="linkRecovery" >¿Olvidaste tu contraseña? Recupérala aquí.</a>
                              </mat-error>
 
-                            <!-- <button type="submit">Login</button> -->
+
                             <br>
 
                             <div class="BTN flex flex-col items-center">
@@ -47,65 +106,9 @@
                         </div>
                     </div>
 
-                    <ng-template #modalTemplate>
-                      <div class="container3 overflow-y-auto max-h-[600px] z-10">
-                        <div class="content flex flex-col items-center">
-
-                          <img src="../../../../assets/images/success.png" class="w-[175px] h-[175px] text-center">
-                          <h2 class="text-center font-medium">Exito!</h2>
-                          <p class="text-center font-normal text-[#535252]">El usuario se ha creado con éxito.<br> ¡Listo para entrar en The Nexus Battle II!</p>
-
-                        </div>
-                    </div>
-                    </ng-template>
 
                 </div>
             </div>
-        </main>
+        </main> -->
 
-<!-- <main class="Fondo">
-  <div class="grid">
-  <div class="container">
-      <div class="box">
-          <div class="inner-box">
-              <div class="inc">
-                  <h2>Iniciar Sesión</h2>
-                  <h3>Ingresa tus datos</h3>
-              </div> -->
-
-              <!--Formulario de Login-->
-              <!-- <form [formGroup]="loginForm"(ngSubmit)="onSubmit()">
-                <label for="username">Username</label>
-                <input type="text" formControlName="username" required>
-                <label for="password">Password</label>
-                <input type="password" formControlName="password" required>
-                <button type="submit">Login</button>
-              </form>
-
-              <div class="BTN">
-                  <button class="btnenter" type="submit">Iniciar Sesión</button>
-                  <span>
-                      <p>!Sin cuenta aun? Que esperas unete!</p>
-                  </span>
-                  <button class="btnenter" type="submit">Registrarte</button>
-
-              </div>
-
-
-              <div class="image-container">
-
-
-                  <img class="imglogo2" src="../../../../assets/images/caballero2.png" alt="">
-
-
-              </div>
-          </div>
-
-      </div>
-  </div>
-</div>
-
-
-
-</main> -->
 

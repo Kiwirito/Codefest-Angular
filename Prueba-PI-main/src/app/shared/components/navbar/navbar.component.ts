@@ -6,7 +6,7 @@ import { ProductsPageComponent } from 'src/app/products/pages/home/home-page.com
 import { CarritoService } from '../../../products/carrito-servicio.component';
 import { Subscription } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 //interface de la carta
 interface Carta {
@@ -28,8 +28,8 @@ export class NavbarComponent implements OnInit, OnDestroy  {
 
   title = 'custom icons';
   cantidadProductosEnCarrito: number = 0;
-
   searchKeyword: string = '';
+  mostrarHeader: boolean = true;
 
   usuarioHaIniciadoSesion: boolean = false;
   nombreUsuario: string = '';
@@ -88,36 +88,18 @@ export class NavbarComponent implements OnInit, OnDestroy  {
   }
 
   ngOnInit() {
-    // Obtener la cantidad inicial de productos en el carrito
-    this.cantidadProductosEnCarrito = this.carritoService.obtenerCantidadProductosEnCarrito();
-
-    // Suscribirse a los cambios en la cantidad de productos en el carrito
-    this.carritoSubscription = this.carritoService.cantidadProductosEnCarrito$.subscribe(
-      (cantidad) => {
-        this.cantidadProductosEnCarrito = cantidad;
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        // Comprueba la ruta actual
+        if (event.url === '/login' || event.url === '/register') {
+          // Si la ruta es "/login", oculta el encabezado
+          this.mostrarHeader = false;
+        } else {
+          // En otras rutas, muestra el encabezado
+          this.mostrarHeader = true;
+        }
       }
-    );
-
-    // Comprobar si existe un token de acceso en el localStorage
-    const token = this.cookieService.get('access_token');
-    const username = localStorage.getItem('username')
-
-    if (token) {
-      this.nombreUsuario = username || '';
-      this.usuarioHaIniciadoSesion = true;
-    };
-
-    this.getCartas();
-    this.calcular();
-    /*8
-    this.websocketService.listen('cartUpdated').subscribe((data: Carta[] | Carta) => {
-      if (Array.isArray(data)) {
-        this.cartas = data;
-      } else {
-        this.cartas = [data]
-      }
-
-    });*/
+    });
   }
 
   search(){

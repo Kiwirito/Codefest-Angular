@@ -1,0 +1,11 @@
+shared-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* Un valor alto para asegurarte de que esté en la parte superior */
+}
+
+router-outlet {
+  margin-top: 60px; /* Ajusta esto según la altura de tu navbar */
+}

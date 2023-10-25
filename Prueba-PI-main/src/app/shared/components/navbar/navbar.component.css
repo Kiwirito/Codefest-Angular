@@ -27,75 +27,27 @@
 
 /* Menu Navegacion */
 
-#carrito-boton p, mat-icon {
-  color: rgb(255, 255, 255);
-  transition: background-color 0.3s ease;
-}
-
-#carrito-boton:hover p, mat-icon{
-  color: #dbaf29
-
-}
-
-#btnIrCarro{
-  background-color: #dbaf29;
-  transition: background-color 0.3s ease;
-}
-
-#btnIrCarro:hover{
-  background-color: #b88f15;
-
-}
-
-.icon-trash-resum{
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s ease, color 0.3s ease;
-
-}
-
-.icon-trash-resum:hover {
-  transform: scale(1.1); /* Agranda el icono al 110% del tamaño original */
-  color: #ff0000;
-}
-.icon-trash-resum mat-icon:hover{
-  color: #ff0000;
-}
-
-
-#btnComprar{
-  background-color: #db5b29;
-  transition: background-color 0.3s ease;
-}
-#btnComprar:hover{
-  background-color: #bb400f;
-}
-
-#logoNexusBattle {
-  z-index: -30;
-}
-
 
 
 #topbar-search {
-  background-color: rgba(180, 81, 0, 0.507);
+  background-color: #111a2bc7;
   /* background-image: url('./assets/images/patron_madera3.png'); */
   background-blend-mode: screen;
   font-size: 1.125rem/* 18px */;
   line-height: 1.75rem/* 28px */;
+  border-radius: 21px;
 
 }
 
 
 #header {
-  background-image: url("../../../../assets/images/header.jpeg");
+  background-color: #111a2b00;
   background-size: cover;
   background-position: center;
   height: 88px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   font-size: 19px;
   position: relative;
   z-index: 2;
@@ -109,8 +61,7 @@
 #nav {
   display: flex;
   list-style: none;
-  margin: 0;
-  padding: 0;
+
 }
 
 #indicadorCarrito{
@@ -125,6 +76,13 @@
   color: white;
   transition: background-color 0.3s ease;
   padding: 10px 20px;
+}
+
+#logoNexusBattle{
+  transition: background-color 0.3s ease;
+}
+#logoNexusBattle:hover p{
+  color: #dbaf29
 }
 
 #nav #enlace_menuv a:hover {
