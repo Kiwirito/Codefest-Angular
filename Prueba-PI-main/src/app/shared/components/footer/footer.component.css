@@ -78,17 +78,17 @@ footer {
   width: 4px;
   scrollbar-width: thin;
   scrollbar-color: rgb(168, 98, 98);
-  scrollbar-darkshadow-color: #dbaf29;
+  scrollbar-darkshadow-color: #111A2B;
 
 }
 
 .container3::-webkit-scrollbar-thumb{
-  background-color: rgba(255, 242, 0, 0.733);
+  background-color: rgba(28, 33, 100, 0.733);
   border-radius: 30px;
 }
 
 .container3::-webkit-scrollbar-track{
-  background-color: #b88f1596;
+  background-color: #111a2b70;
   border-radius: 5px;
   margin-top: 25px;
 

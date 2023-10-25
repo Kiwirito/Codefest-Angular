@@ -47,32 +47,3 @@
   background-color: #a38427;
 }
 
-
-@media (max-width: 900px){
-
-  #contenedor-vitrina {
-    height: 100%;
-  }
-
-
-}
-
-
-@media (max-width: 800px){
-
-
-
-
-}
-
-@media (max-width: 500px){
-
-  #contenedor-vitrina {
-    height: 100%;
-  }
-
-
-
-
-
-}

@@ -9,22 +9,28 @@
 <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full 3xl:2xl:xl:lg:md:sm:translate-x-0" aria-label="Sidenav">
  <div id="fondo_menu" class="overflow-y-auto py-5 px-3 h-full ">
      <ul class="space-y-2">
-         <li *ngIf="usuarioHaIniciadoSesion">
-             <a href="https://juego.thenexusbattles2.cloud/" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-slate-200 group">
-                 <mat-icon class="text-amber-800" aria-hidden="false" aria-label="Jugar Online" svgIcon="jugar" style="width: 24px; height: 24px">Jugar Online</mat-icon>
-                 <span class="ml-3 text-amber-800">Jugar Online</span>
+         <li>
+             <a href="" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-slate-200 group">
+                 <mat-icon class="text-white" aria-hidden="false" aria-label="Banco" svgIcon="banco" style="width: 24px; height: 24px"></mat-icon>
+                 <span class="ml-3 text-white">Social</span>
              </a>
          </li>
          <li>
-             <a href="banco" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-slate-200 group">
-                 <mat-icon class="text-amber-800" aria-hidden="false" aria-label="Banco" svgIcon="banco" style="width: 24px; height: 24px">Banco</mat-icon>
-                 <span class="ml-3 text-amber-800">Mi Banco</span>
+             <a href="" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-slate-200 group">
+              <mat-icon class="text-white" aria-hidden="false" aria-label="Mi Cuenta" svgIcon="jugar" style="width: 24px; height: 24px"></mat-icon>
+                 <span class="ml-3 text-white">Streaming</span>
+             </a>
+         </li>
+         <li>
+             <a href="" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-slate-200 group">
+              <mat-icon class="text-white" aria-hidden="false" aria-label="Mi Cuenta" svgIcon="torneo" style="width: 24px; height: 24px"></mat-icon>
+                 <span class="ml-3 text-white">Chat en Vivo</span>
              </a>
          </li>
          <li>
              <a href="login" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-slate-200 group">
-              <mat-icon class="text-amber-800" aria-hidden="false" aria-label="Mi Cuenta" svgIcon="micuenta" style="width: 24px; height: 24px">Mi Cuenta</mat-icon>
-                 <span class="ml-3 text-amber-800">Mi Cuenta</span>
+              <mat-icon class="text-white" aria-hidden="false" aria-label="Mi Cuenta" svgIcon="micuenta" style="width: 24px; height: 24px"></mat-icon>
+                 <span class="ml-3 text-white">Iniciar Sesion</span>
              </a>
          </li>
 
@@ -39,7 +45,7 @@
 
   <nav id="nav" class=" border-gray-200  py-3 items-center justify-center">
 
-  <div id="logoNexusBattle" class="relative ">
+  <div id="logoNexusBattle" class="relative mr-24">
     <a href="#" class="flex items-center space-x-4">
       <img src="../../../../assets/images/Escudo_UPB.png" class="w-[50px] h-[50px]" alt="Nexus Battle II Logo"/>
       <p class="text-white">UPB</p>
@@ -52,7 +58,7 @@
       <div class="lg:flex lg:flex-wrap lg:justify-between lg:items-center md:hidden sms:hidden " id="enlace_menuv">
 
         <a *ngIf="usuarioHaIniciadoSesion" href="https://juego.thenexusbattles2.cloud/" class=" flex ml-1">Jugar Online</a>
-        <a href="banco" class="flex ml-24">Social</a>
+        <a href="banco" class="flex ">Social</a>
         <a  href="login" class="flex">Streaming</a>
         <a  href="login " class="flex">Chat en Vivo</a>
         <a  href="login " class="flex mr-24">Iniciar Sesion</a>

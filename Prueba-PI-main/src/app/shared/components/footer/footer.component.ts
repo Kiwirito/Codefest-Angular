@@ -14,7 +14,7 @@ export class FooterComponent implements OnInit {
   constructor(private modalService: ModalService,private router: Router){}
 
   openModal(modalTemplate:TemplateRef<any>){
-    this.modalService.open(modalTemplate, {size: 'lg', title:'Términos y Condiciones The Nexus Battles II'})
+    this.modalService.open(modalTemplate, {size: 'lg', title:'Términos y condiciones para el equipo de desarrollo de "CodeMania'})
     .subscribe((action) => {
       console.log('ModalAction', action)
     })

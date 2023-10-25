@@ -84,7 +84,7 @@ export class SignupPageComponent implements OnInit {
   }
 
   openModal(modalTemplate:TemplateRef<any>){
-    this.modalService.open(modalTemplate, {size: 'lg', title:'Términos y condiciones para el equipo de desarrollo de "CodeMania"'})
+    this.modalService.open(modalTemplate, {size: 'lg', title:'Términos y condiciones para el equipo de desarrollo de "CodeMania'})
     .subscribe((action) => {
       console.log('ModalAction', action)
     })
