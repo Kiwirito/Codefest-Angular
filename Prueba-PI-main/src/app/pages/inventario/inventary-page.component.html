@@ -1,0 +1,126 @@
+<main id="contenedor-vitrina" class="relative bg-center">
+  <div class="caja-inv my-16">
+    <div class="profile-header text-center flex flex-col items-center justify-center"></div>
+
+    <div *ngIf="inventario.length <= 4; else pagination" class="profile-container">
+      <div class="left-box">
+        <div class="carousel">
+          <h3 class="Tuscartas text-black">Tus cartas</h3>
+          <div class="flex">
+            <div class="carousel-inner pl-[30px]">
+              <div *ngFor="let item of displayedImages">
+                <div *ngIf="item && item.carta" id="bordeCarta" style="background:rgba(17,18,18,1); color:white; border:1px solid rgba(255,244,0,1);" class="carta2 2xl:w-[250px] 2xl:h-[415px] md:w-[200px] md:h-[285px] hover:2xl:h-[435px] hover:md:h-[315px]">
+                  <!-- Bordeado Exotico Carta -->
+                  <!-- Imagen Superior -->
+                  <div class="titulo">
+                    <p class="2xl:text-[18px] md:text-[14px] truncate">{{ item.carta.nombre }}</p>
+                  </div>
+                  <div class="img">
+                    <a>
+                      <img src="https://cards.thenexusbattles2.cloud/assets/{{item.carta.imagen}}" alt="" class="2xl:h-[250px] md:sm:h-[150px]">
+                    <div class="overlay"></div>
+                    </a>
+                  </div>
+                  <div class="contenido 2xl:w-[220px] 2xl:h-[75px] md:sm:w-[165px] md:sm:h-[50px]">
+                    <div class="2xl:text-[16px] md:text-[11px] text-ellipsis overflow-hidden">
+                      <p>{{ item.carta.descripcion }}</p>
+                    </div>
+                    <div class="2xl:text-[16px] md:text-[11px]">
+                      <p *ngIf="item.carta.coleccion === 'Heroes'">Poder: {{ item.carta.poder }}</p>
+                      <p *ngIf="item.carta.coleccion === 'Heroes'">Vida: {{ item.carta.vida }}</p>
+                      <p *ngIf="item.carta.coleccion === 'Heroes'">Defensa: {{ item.carta.defensa }}</p>
+                      <p *ngIf="item.carta.coleccion === 'Heroes'">Ataque: {{ item.carta.ataqueBase }}</p>
+                      <p *ngIf="item.carta.coleccion === 'Heroes'">Dano: {{ item.carta.dano }}</p>
+                      <p *ngIf="item.carta.coleccion === 'Armaduras'">{{ item.carta.descripcion }}</p>
+                      <p *ngIf="item.carta.coleccion === 'Armas'">{{ item.carta.descripcion }}</p>
+                      <p *ngIf="item.carta.coleccion === 'Items'">{{ item.carta.descripcion }}</p>
+                      <p *ngIf="item.carta.coleccion === 'Epicas'">{{ item.carta.descripcion }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+
+<ng-template #pagination>
+  <div class="profile-container">
+    <div class="left-box">
+      <div class="carousel">
+        <h3 class="Tuscartas text-black">Tus cartas</h3>
+        <div class="flex">
+          <button (click)="prevImage()">
+            <mat-icon
+              class="w-6 h-6"
+              aria-hidden="false"
+              aria-label="Flecha Izquierda"
+              svgIcon="flecha_izquierda"
+              >Flecha_Izquierda</mat-icon
+            >
+          </button>
+          <div class="carousel-inner pl-[30px]">
+            <div *ngFor="let item of displayedImages">
+              <div *ngIf="item && item.carta" id="bordeCarta" style="background:rgba(17,18,18,1); color:white; border:1px solid rgba(255,244,0,1);" id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[415px] md:w-[200px] md:h-[285px]">
+                <!-- Bordeado Exotico Carta -->
+                <!-- Imagen Superior -->
+                <div class="titulo">
+                  <p class="2xl:text-[18px] md:text-[14px]">{{ item.carta.nombre }}</p>
+                </div>
+                <div class="img">
+                  <a>
+                    <img src="https://cards.thenexusbattles2.cloud/assets/{{item.carta.imagen}}" alt="" class="2xl:h-[250px] md:sm:h-[150px]">
+                  <div class="overlay"></div>
+                  </a>
+                </div>
+                <div class="contenido 2xl:w-[220px] 2xl:h-[75px] md:sm:w-[165px] md:sm:h-[50px]">
+                  <div class="2xl:text-[16px] md:text-[11px]">
+                    <p *ngIf="item.carta.coleccion === 'Heroes'">Poder: {{ item.carta.poder }}</p>
+                    <p *ngIf="item.carta.coleccion === 'Heroes'">Vida: {{ item.carta.vida }}</p>
+                    <p *ngIf="item.carta.coleccion === 'Heroes'">Defensa: {{ item.carta.defensa }}</p>
+                    <p *ngIf="item.carta.coleccion === 'Armaduras'">{{ item.carta.descripcion }}</p>
+                    <p *ngIf="item.carta.coleccion === 'Armas'">{{ item.carta.descripcion }}</p>
+                    <p *ngIf="item.carta.coleccion === 'Items'">{{ item.carta.descripcion }}</p>
+                    <p *ngIf="item.carta.coleccion === 'Epicas'">{{ item.carta.descripcion }}</p>
+                  </div>
+                  <div class="2xl:text-[16px] md:text-[11px]">
+                    <p *ngIf="item.carta.coleccion === 'Heroes'">Ataque: {{ item.carta.ataqueBase }}</p>
+                    <p *ngIf="item.carta.coleccion === 'Heroes'">Dano: {{ item.carta.dano }}</p>
+                  </div>
+                </div>
+                <br>
+              </div>
+            </div>
+          </div>
+          <button (click)="nextImage()">
+            <mat-icon
+              class="mr-[30px]"
+              aria-hidden="false"
+              aria-label="Flecha Derecha"
+              svgIcon="flecha_derecha"
+              >Flecha_Derecha</mat-icon
+            >
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ng-template>
+
+
+
+
+<!-- <div *ngFor="let item of inventario"> -->
+    <!-- <div *ngIf="item && item.carta"> Verifica que item.carta no sea nulo antes de mostrar los detalles -->
+        <!-- <p>Id: {{ item.id_carta }}</p> -->
+        <!-- <p>Imagen: {{ item.carta.urlImagen }}</p>
+        <p>Nombre: {{ item.carta.nombre_carta }}</p>
+        <p>Precio: {{ item.carta.price }}</p>
+    </div>
+</div> -->

@@ -1,0 +1,40 @@
+<main class="contenedor">
+  <img src="logoPartidas.png" alt="logo the nexus battles">
+  <div class="contenedor__tabla">
+
+      <div class="tabla__contenedor flex flex-col justify-center ">
+          <h1 class="tabla__contenedor__titulo mt-16 -mb-24">Administar Usuarios</h1>
+          <div class="tabla__contenedor__padre flex-col items-center justify-center">
+
+              <div class="tabla w-max">
+
+                  <div class="fila encabezado">
+                    <div class="columna nombreP">Username</div>
+                    <div class="columna ">Nombre</div>
+                    <div class="columna ">Apellido</div>
+                    <div class="columna ">Correo</div>
+                    <div class="columna ">Estado</div>
+                  </div>
+
+                  <!-- ngFor desde aca -->
+                  <div class="fila" *ngFor="let user of users">
+                    <div class="columna nombreP">{{ user.username }}</div>
+                    <div class="columna ">{{ user.name }}</div>
+                    <div class="columna ">{{ user.last_name }}</div>
+                    <div class="columna ">{{ user.email }}</div>
+                    <div class="columna self-center"><button (click)="changeActiveUser(user.username)">{{ user.is_active }}</button></div>
+                  </div>
+                </div>
+
+                <div class="btn__actualizar mt-8 space-x-5">
+                  <button >Actualizar Usuarios</button>
+                  <button class="font-thin" (click)="redirectTo('solicitudes')">Ver peticiones</button>
+                </div>
+          </div>
+
+
+
+      </div>
+  </div>
+
+</main>

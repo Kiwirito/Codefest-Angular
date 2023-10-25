@@ -1,0 +1,151 @@
+
+.Fondo{
+    background-image: url('../../../assets/images/fondo-inicio.jpg');
+    background-size: cover;
+    height: calc(100vh - 0px); /* Toma el 100% del viewport height y resta la altura del header */
+    /* Toma el 100% del viewport height y resta la altura del header */
+
+}
+
+
+.profile-card {
+  
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    background-image: url('../../../assets/images/fondo-decorativo-marco-grunge-manchas-pliegues.jpg');
+    background-size: cover;
+    width: 800px;
+    height: 590px;
+    opacity: 86%;
+    margin-top: 0;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    cursor: pointer;
+    
+    
+ 
+}
+.profile-image:hover{
+
+    transform: scale(1.2);
+}
+
+
+.profile-username {
+    color: #695513;
+    font-size: larger;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.profile-email {
+    font-size: larger;
+    margin-top: 10px;
+    color: #000000;
+}
+.name{
+
+    font-size: 20px;
+}
+.apellido{
+
+    font-size: 20px;
+}
+
+
+
+.profile-card button {
+    background-color: #CEB25D;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;  
+ 
+}
+
+ .profile-card button:hover {
+    background-color:#e9c14b;
+    transform: scale(1.1);
+    
+
+}
+
+
+
+.profile-form {
+    padding: 20px;
+    align-items: center;
+    margin-top: 40px;
+    margin-left: 29px;
+    margin-right: 29px;
+    
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="file"] {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    background-color: #ffffff1c;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.profile-card button {
+    background-color: #CEB25D;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 10px 10px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+   
+}
+
+.profile-card button:hover {
+    background-color: #e9c14b;
+    transform: scale(1.1);
+}
+

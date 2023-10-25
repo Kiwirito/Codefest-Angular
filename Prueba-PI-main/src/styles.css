@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/**
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins.
+ */
+@layer base {
+/* Use the imported font family in your styles */
+/* @font-face {
+  font-family: FontPersonalizada;
+  src: url(./assets/fonts/Mokgech-Regular.otf);
+} */
+
+body {
+  font-family: 'Montserrat', serif;
+  /* font-family: FontPersonalizada; */
+}
+
+}
+
+
+/**
+ * This injects Tailwind's component classes and any component classes
+ * registered by plugins.
+ */
+@layer components {
+
+
+
+
+}
+
+/**
+ * This injects Tailwind's utility classes and any utility classes registered
+ * by plugins.
+ */
+@layer utilities {
+
+}

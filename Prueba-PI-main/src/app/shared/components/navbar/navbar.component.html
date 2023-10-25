@@ -1,0 +1,211 @@
+
+<button id="boton_menu_nav" data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="absolute top-4 left-0 z-40 lg:hidden items-center p-2 mt-2 ml-3 text-sm text-white rounded-lg  focus:outline-none focus:ring-2 focus:ring-gray-200 ">
+  <span class="sr-only">Open sidebar</span>
+  <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+     <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+  </svg>
+</button>
+
+<aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full 3xl:2xl:xl:lg:md:sm:translate-x-0" aria-label="Sidenav">
+ <div id="fondo_menu" class="overflow-y-auto py-5 px-3 h-full ">
+     <ul class="space-y-2">
+         <li *ngIf="usuarioHaIniciadoSesion">
+             <a href="https://juego.thenexusbattles2.cloud/" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-slate-200 group">
+                 <mat-icon class="text-amber-800" aria-hidden="false" aria-label="Jugar Online" svgIcon="jugar" style="width: 24px; height: 24px">Jugar Online</mat-icon>
+                 <span class="ml-3 text-amber-800">Jugar Online</span>
+             </a>
+         </li>
+         <li>
+             <a href="banco" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-slate-200 group">
+                 <mat-icon class="text-amber-800" aria-hidden="false" aria-label="Banco" svgIcon="banco" style="width: 24px; height: 24px">Banco</mat-icon>
+                 <span class="ml-3 text-amber-800">Mi Banco</span>
+             </a>
+         </li>
+         <li>
+             <a href="login" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-slate-200 group">
+              <mat-icon class="text-amber-800" aria-hidden="false" aria-label="Mi Cuenta" svgIcon="micuenta" style="width: 24px; height: 24px">Mi Cuenta</mat-icon>
+                 <span class="ml-3 text-amber-800">Mi Cuenta</span>
+             </a>
+         </li>
+
+     </ul>
+ </div>
+
+</aside>
+
+<header id="header" class="flex justify-between">
+
+
+
+  <nav id="nav" class=" border-gray-200 px-4 lg:px-6 py-3">
+
+    <!-- Enlances del menu -->
+
+
+      <div class="lg:flex lg:flex-wrap lg:justify-between lg:items-center md:hidden sms:hidden " id="enlace_menuv">
+
+        <a *ngIf="usuarioHaIniciadoSesion" href="https://juego.thenexusbattles2.cloud/" class=" flex ml-1">Jugar Online</a>
+        <a href="banco" class="flex">Mi Banco</a>
+        <a *ngIf="!usuarioHaIniciadoSesion" href="login" class="flex">Mi Cuenta</a>
+        <ng-container *ngIf="usuarioHaIniciadoSesion">
+          <h1 class="" style="color: white;"><a href="profile">{{ nombreUsuario }}</a></h1>
+        </ng-container>
+      </div>
+
+
+
+  </nav>
+
+  <div id="logoNexusBattle" class="absolute -top-12 lg:left-[50.5%] md:left-[42%] sms:left-[15%] lg:w-[8%] lg:h-[9%] sms:w-[16%] sms:h-[17%]">
+    <a href="#">
+      <img src="../../../../assets/images/logoNexus.png" class="" alt="Nexus Battle II Logo"/>
+    </a>
+  </div>
+
+  <nav id="nav">
+
+    <div class="flex flex-wrap items-center">
+
+      <!-- Barra Navegacion -->
+      <form (submit)="search()" class="block">
+        <!-- Conteneder de busqueda -->
+
+            <div class="relative xl:w-96 sms:w-36">
+              <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                <!-- Icono Busqueda -->
+                <svg class="w-5 h-5" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+              </div>
+              <input type="text" id="topbar-search" [(ngModel)]="searchKeyword" class="border border-separate text-white sm:text-lg block w-full pl-10
+              border-white placeholder-white focus:outline-none focus:border-[#] focus:ring-1" placeholder="Search" name="searchKeyword">
+            </div>
+
+      </form>
+
+      <div class="carritocompras " id="enlace_menuv">
+        <!-- Icono Carrito -->
+          <a>
+            <button type="button" data-dropdown-toggle="resumen_flot" id="carrito-boton" class="flex flex-wrap items-center py-2.5 pr-3.5 pl-5">
+              <mat-icon class="icono-carrito" aria-hidden="false" aria-label="Carrito Compras" svgIcon="carrito">Carrito</mat-icon>
+              <p class="px-2.5" id="texto-carrito">Carrito</p>
+            </button>
+          </a>
+      </div>
+
+      <div class="bg-[#dbaf29] text-black rounded-full w-6 h-6 text-center absolute bottom-4" *ngIf="cantidadProductosEnCarrito > 0" id="indicadorCarrito">
+        {{ cantidadProductosEnCarrito }}
+      </div>
+
+      <!-- Contenido Resumen Flotante -->
+
+      <div id="resumen_flot" class="hidden w-[280px] max-h-[1080px] p-3 mr-20 bg-white rounded-lg shadow dark:bg-gray-700">
+
+        <!-- Lista de productos -->
+        <div class="space-y-2" id="Lista">
+
+          <!-- Contenido Producto - A Esto hacerle el ngFor -->
+          <div *ngFor="let carta of cartas" class="space-y-2" id="productoContainer">
+            <div class="flex items-center">
+              <img src="https://cards.thenexusbattles2.cloud/assets/{{ carta.urlImagen }}" class="w-[27%] h-[27%]">
+              <ul class="space-y-5">
+              <li for="nombreCarta" id="texsting" class="truncate ml-2 text-[16px] font-medium text-black">
+                {{ carta.nombre_carta }}
+              </li>
+              <li for="precioCarta" class="ml-2 text-[16px] font-medium text-[#db5b29] ">
+                ${{ carta.price }}
+              </li>
+              <li for="cantidadCarta" class="ml-2 text-[16px] font-medium text-black flex justify-between items-center">
+                Cantidad: {{ carta.quantity }}
+                <!-- Icono -->
+                <button class="absolute right-3 icon-trash-resum">
+                  <mat-icon class="w-5 h-5 mr-1 text-[#cac2c2]" aria-hidden="false" aria-label="" svgIcon="trash">
+                  </mat-icon>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <hr class="border border-[#000000] w-[100%]">
+          </div>
+
+          <!-- Total A Pagar -->
+          <div class="">
+            <ul class="flex items-center justify-between">
+            <li for="nombreCarta" id="texsting" class="truncate ml-2 text-[16px] font-medium text-black">
+              Subtotal:
+            </li>
+            <li for="precioCarta" class="mr-2 text-[16px] font-medium text-[#db5b29] ">
+              ${{subtotal}}
+            </li>
+          </ul>
+          </div>
+
+          <hr class="border border-[#000000] w-[100%]">
+
+        <!-- Botones "Ir al carrito" y "Ir a comprar" -->
+        <div class="flex justify-between mt-4">
+          <button class="p-1 rounded w-20 h-10" id="btnIrCarro">
+            <p class="text-[15px] text-white font-medium"><a href="/cart" class="text-center">Ir al carrito</a></p>
+          </button>
+          <button class="p-1 rounded w-20 h-10" id="btnComprar">
+            <p class="text-[15px] text-white font-medium">Ir a comprar</p>
+          </button>
+        </div>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- Contenido Lista Deseos -->
+
+      <div id="deseos_flot" class="hidden w-[280px] max-h-[1080px] p-3 mr-20 bg-white rounded-lg shadow dark:bg-gray-700">
+
+        <!-- Lista de productos -->
+        <div class="space-y-2" id="Lista">
+
+          <!-- Contenido Producto - A Esto hacerle el ngFor -->
+          <div class="space-y-2" id="productoContainer">
+            <div class="flex items-center">
+              <img src="../../../../assets/images/carta.png" class="w-[27%] h-[27%]">
+              <ul class="space-y-5">
+              <li for="nombreCarta" id="texsting" class="truncate ml-2 text-[16px] font-medium text-black">
+                Guerrero Clandestino
+              </li>
+              <li for="precioCarta" class="ml-2 text-[16px] font-medium text-[#db5b29] ">
+                $10.000
+              </li>
+              <li for="cantidadCarta" class="ml-2 text-[16px] font-medium text-black flex justify-between items-center">
+                Disponible: Si
+              </li>
+            </ul>
+          </div>
+        <!-- Botones "Ir al carrito" y "Ir a comprar" -->
+          <div class="flex justify-between">
+            <button class="p-1 rounded w-24 h-10" id="btnIrCarro">
+              <p class="text-[15px] text-white font-medium"><a class="text-center">Quitar Favoritos</a></p>
+            </button>
+            <button class="p-1 rounded w-24 h-10" id="btnComprar">
+              <p class="text-[15px] text-white font-medium">Añadir al Carrito</p>
+            </button>
+          </div>
+          <hr class="border border-[#000000] w-[100%]">
+          </div>
+
+
+
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+    </nav>
+
+</header>
+
+
+

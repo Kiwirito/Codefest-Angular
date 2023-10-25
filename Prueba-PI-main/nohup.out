@@ -1,0 +1,67 @@
+
+> angula-app-pi2@0.0.0 start
+> ng serve -o
+
+- Generating browser application bundles (phase: setup)...
+✔ Browser application bundle generation complete.
+
+Initial Chunk Files   | Names         |  Raw Size
+vendor.js             | vendor        |   3.33 MB |
+main.js               | main          | 654.34 kB |
+polyfills.js          | polyfills     | 333.19 kB |
+styles.css, styles.js | styles        | 277.37 kB |
+scripts.js            | scripts       |   8.72 kB |
+runtime.js            | runtime       |   6.53 kB |
+
+| Initial Total |   4.58 MB
+
+Build at: 2023-09-17T00:45:44.380Z - Hash: da2744eeba9b11ec - Time: 11584ms
+
+Warning: /home/webserver/Prueba-PI/src/app/products/pages/products-page/products-page.component.ts depends on 'vanilla-tilt'. CommonJS or AMD dependencies can cause optimization bailouts.
+For more info see: https://angular.io/guide/build#configuring-commonjs-dependencies
+
+
+
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+
+✔ Compiled successfully.
+
+> angula-app-pi2@0.0.0 start
+> ng serve -o
+
+- Generating browser application bundles (phase: setup)...
+✔ Browser application bundle generation complete.
+
+Initial Chunk Files   | Names         |  Raw Size
+vendor.js             | vendor        |   3.33 MB |
+main.js               | main          | 654.34 kB |
+polyfills.js          | polyfills     | 333.19 kB |
+styles.css, styles.js | styles        | 277.37 kB |
+scripts.js            | scripts       |   8.72 kB |
+runtime.js            | runtime       |   6.53 kB |
+
+| Initial Total |   4.58 MB
+
+Build at: 2023-09-17T02:48:58.782Z - Hash: da2744eeba9b11ec - Time: 11651ms
+
+Warning: /home/webserver/Prueba-PI/src/app/products/pages/products-page/products-page.component.ts depends on 'vanilla-tilt'. CommonJS or AMD dependencies can cause optimization bailouts.
+For more info see: https://angular.io/guide/build#configuring-commonjs-dependencies
+
+
+
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+
+✔ Compiled successfully.
+
+> angula-app-pi2@0.0.0 start
+> ng serve -o
+
+? Port 4200 is already in use.
+Would you like to use a different port? (Y/n) [46D[46C
+> angula-app-pi2@0.0.0 start
+> ng serve -o
+
+? Port 4200 is already in use.
+Would you like to use a different port? (Y/n) [46D[46C

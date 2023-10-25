@@ -1,0 +1,8 @@
+<main id="contenedor-vitrina" class="fondo flex justify-center">
+    <div class="subscription-section w-max h-max mt-[5%]">
+        <div *ngFor="let carta of cartas" class="subscription-card ">
+            <img  class="fondomenbre2" src="../../../assets/images/{{carta.id_carta}}.gif" alt="">
+            <ngx-paypal [config]="paypalConfig[carta.id_carta]"></ngx-paypal>
+        </div>
+    </div>
+</main>

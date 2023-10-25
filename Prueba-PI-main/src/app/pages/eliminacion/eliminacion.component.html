@@ -1,0 +1,51 @@
+
+<main class="Fondo">
+
+
+  <div class="flex items-center justify-center mt-[5%]">
+      <div class="box">
+          <div class="inner-box">
+              <div class="flex items-center flex-col ">
+                  <h2>Eliminar mi cuenta</h2>
+                  <h3>¿Quieres dejar tu huella en The Nexus Battle II? ¡Cuéntanos tu razón!"</h3>
+              </div>
+
+
+              <div class="image-container">
+
+                  <a href="#"><img class="imglogo" src="../img/Logo.png" alt=""></a>
+                  <img class="imglogo2" src="../../../assets/images/caballero4.png" alt="">
+
+                  <textarea type="text" class="mt-4" id="razon" formControlName="razonOpcional" required> </textarea>
+
+              </div>
+              <div class="BTN flex ml-[65%] space-x-4">
+
+                <button class="btnenter" [routerLink]="['/profile']">Cancelar</button>
+                <button class="btnenter2" (click)="openModalEjemplo(modalEjemplo)">Eliminar Cuenta</button>
+
+
+            </div>
+          </div>
+
+      </div>
+  </div>
+</main>
+
+<ng-template #modalEjemplo>
+  <div class="container3 overflow-y-auto max-h-[800px] max-w-[720px] z-10">
+    <div class="content flex flex-col items-center">
+
+      <h2 class="text-center">Confirmar eliminar cuenta</h2>
+      <h3 class="text-center mt-3">Lamentamos profundamente que estés considerando abandonar The Nexus Battle 2. Queremos asegurarnos de que tomes una decisión informada. Si decides eliminar tu cuenta, ten en cuenta que esto conlleva ciertas consecuencias. Perderás todas las cartas y barajas que has recolectado con esmero, cualquier membresía activa se cancelará sin posibilidad de reembolso, y tu inventario junto con los objetos que posees serán eliminados de forma permanente.</h3>
+      <h3 class="mt-3 relative">
+        No hay vuelta atras si confirmas eliminar tu cuenta
+        <span class="absolute h-3 w-full bg-yellow-200 left-0 bottom-[6px] -z-10"></span>
+      </h3>
+      <div class="flex space-x-4 mt-3">
+        <button class="btnenter3" (click)="deleteUser(perfil.user)" >Confirmar eliminación</button>
+      </div>
+    </div>
+</div>
+</ng-template>
+

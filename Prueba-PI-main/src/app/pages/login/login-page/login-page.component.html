@@ -1,0 +1,111 @@
+
+        <main class="Fondo">
+
+
+            <div class="flex items-center justify-center mt-[5%]">
+                <div class="box">
+                    <div class="inner-box">
+                        <div class="inc">
+                            <h2>Iniciar Sesión</h2>
+                            <h3>Ingresa tus datos</h3>
+                        </div>
+                        <!-- Formulario Login -->
+                        <form [formGroup]="loginForm"(ngSubmit)="onSubmit()">
+                            <label for="username" >Nombre Usuario</label>
+                            <input type="text" id="username" formControlName="username" required
+                            [ngClass]="{'invalid:border-red-600': showCustomError, 'focus:invalid:border-red-600 focus:invalid:ring-red-600': showCustomError}">
+                            <br>
+                            <label for="password" >Contraseña</label>
+                            <input type="password" id="password" formControlName="password" required
+                            [ngClass]="{'invalid:border-red-600': showCustomError, 'focus:invalid:border-red-600 focus:invalid:ring-red-600': showCustomError}">
+
+                            <!-- MatError para mostrar el mensaje personalizado -->
+                             <mat-error class="text-[12px] text-red-600 mt-2 ml-3 max-w-[390px]">
+                              {{ getErrorMessage() }} <a href="/recovery" id="linkRecovery" >¿Olvidaste tu contraseña? Recupérala aquí.</a>
+                             </mat-error>
+
+                            <!-- <button type="submit">Login</button> -->
+                            <br>
+
+                            <div class="BTN flex flex-col items-center">
+
+                              <button class="btnenter" type="submit" (click)="showSavedData()">Iniciar Sesión</button>
+
+                              <p class="">!Sin cuenta aun? Que esperas unete!</p>
+
+                              <a href="/register" class="btnenter pt-[4px]" type="submit">Registrarte</a>
+                          </div>
+                        </form>
+
+
+                        <div class="image-container">
+
+                            <a href="#"><img class="imglogo" src="../img/Logo.png" alt=""></a>
+                            <img class="imglogo2" src="../../../../assets/images/caballero2.png" alt="">
+
+
+                        </div>
+                    </div>
+
+                    <ng-template #modalTemplate>
+                      <div class="container3 overflow-y-auto max-h-[600px] z-10">
+                        <div class="content flex flex-col items-center">
+
+                          <img src="../../../../assets/images/success.png" class="w-[175px] h-[175px] text-center">
+                          <h2 class="text-center font-medium">Exito!</h2>
+                          <p class="text-center font-normal text-[#535252]">El usuario se ha creado con éxito.<br> ¡Listo para entrar en The Nexus Battle II!</p>
+
+                        </div>
+                    </div>
+                    </ng-template>
+
+                </div>
+            </div>
+        </main>
+
+<!-- <main class="Fondo">
+  <div class="grid">
+  <div class="container">
+      <div class="box">
+          <div class="inner-box">
+              <div class="inc">
+                  <h2>Iniciar Sesión</h2>
+                  <h3>Ingresa tus datos</h3>
+              </div> -->
+
+              <!--Formulario de Login-->
+              <!-- <form [formGroup]="loginForm"(ngSubmit)="onSubmit()">
+                <label for="username">Username</label>
+                <input type="text" formControlName="username" required>
+                <label for="password">Password</label>
+                <input type="password" formControlName="password" required>
+                <button type="submit">Login</button>
+              </form>
+
+              <div class="BTN">
+                  <button class="btnenter" type="submit">Iniciar Sesión</button>
+                  <span>
+                      <p>!Sin cuenta aun? Que esperas unete!</p>
+                  </span>
+                  <button class="btnenter" type="submit">Registrarte</button>
+
+              </div>
+
+
+              <div class="image-container">
+
+
+                  <img class="imglogo2" src="../../../../assets/images/caballero2.png" alt="">
+
+
+              </div>
+          </div>
+
+      </div>
+  </div>
+</div>
+
+
+
+</main> -->
+

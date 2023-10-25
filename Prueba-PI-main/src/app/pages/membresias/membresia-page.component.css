@@ -1,0 +1,58 @@
+#contenedor-vitrina {
+    background-image: url('../../../assets/images/fondo-inicio.jpg');
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.subscription-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las cartas horizontalmente */
+    background-color: rgba(234, 233, 233, 0.8); /* Fondo semi-transparente */
+    padding: 60px; /* Espacio alrededor del contenido */
+    padding-bottom: 90px;
+    border-radius: 20px;
+}
+
+.subscription-card {
+    margin-top: -70px;
+    padding: 10px;
+
+    
+    text-align: center;
+    transform: scale(0.8);
+    transition: transform 0.3s;
+    flex: 1; /* Hace que las cartas ocupen un espacio igual */
+    width: 300px;/* Establece un ancho máximo para evitar que se extiendan demasiado */
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.subscription-card:hover {
+    transform: scale(1.05);
+}
+
+.featured {
+    transform: scale(1.05);
+    cursor: pointer;
+    padding: 0px;
+    height: calc(100vh - 540px);
+    background-size: cover;
+}
+
+.fondomenbre{
+    height: calc(100vh - 525px);
+    width: calc(100vh - 650px);
+    background-size: cover;
+    cursor: pointer;
+}
+
+.fondomenbre2{
+
+    height: calc(100vh - 500px);
+    width: calc(100vh - 640px);
+    background-size: cover;
+}

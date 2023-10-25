@@ -1,0 +1,41 @@
+<main class=>
+    <div class="padre">
+    <div class="tabla">
+        <table>
+            <thead>
+                <tr>
+                    <th>Carta</th>
+                    <th>Descripcion</th>
+                    <th>Cantidad</th>
+                    <th>Valor</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let carta of cartas">
+                    <td><img src="https://cards.thenexusbattles2.cloud/assets/{{ carta.imagen }}" alt="" style="height: 250px;"></td>
+                    <td>{{ carta.nombre_carta }}</td>
+                    <td><button (click)="removeToCart(carta.id_carta)"><img src="../../../assets/icons/remove.svg" alt=""></button> {{ carta.quantity }} <button (click)="addToCart(carta.id_carta,carta.price,carta.nombre_carta)"><img src="../../../assets/icons/add.svg" alt=""></button></td>
+                    <td>{{ carta.price }}</td>
+                    <td><button (click)="deleteToCart(carta.id_carta)"><img src="../../../assets/icons/trash.svg" alt=""></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="pagar">
+        <h2 style="font-size: 30px;">Valor a pagar</h2>
+        <br>
+        <p>Subtotal: {{subtotal}}</p>
+        <br>
+        <p>iva: {{iva}}</p>
+        <br>
+        <p>total: {{total}}</p>
+        <div class="botones">
+            <p><a href="/vitrina-productos">Quieres anadir mas productos?</a></p>
+            <br>
+            <button (click)="CreateOrder()">Realizar pedido</button>
+        </div>
+    </div>
+</div>
+</main>

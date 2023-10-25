@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    background: #CCBEA3;
+    background-size: cover;
+    height: 91vh;
+}
+
+.padre{
+    display: flex;
+    padding: 30px;
+    padding-top: 50px;
+}
+
+.tabla{
+    width: 80%;
+}
+
+th{
+    color: black;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: start;
+}
+
+td{
+    font-size: 25px;
+}
+
+tr:hover{
+    background: #a89a7c;
+    transform: scale(1.02);
+}
+
+table{
+    width: 90%;
+}
+
+.pagar{
+    text-align: start;
+    padding: 20px;
+    width: 20%;
+    background: #968664;
+    border-radius: 30px;
+    height: 400px;
+    font-size: 20px;
+    color: white;
+    position: relative;
+}
+
+.botones{
+    position: absolute;
+    bottom: 10px;
+}
+
+.botones p{
+    font-size: 15px;
+}
+
+.botones a:hover{
+    color: yellow;
+    font-size: 16px;
+}
+
+.botones button{
+    background-image: url('../../../assets/images/madera.png');
+    background-size: 100% 100%;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+@media (max-width: 1024px) {
+    .padre{
+        display: inline-block;
+    }
+    .tabla{
+        width: 100%;
+    }
+    .pagar{
+        width: 30%;
+        height: 200px;
+    }
+}
