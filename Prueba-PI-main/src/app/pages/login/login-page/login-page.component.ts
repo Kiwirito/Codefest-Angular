@@ -75,8 +75,22 @@ export class LoginPageComponent implements OnInit{
         // Obtenemos la información almacenada localmente
         const savedUserData = JSON.parse(localStorage.getItem('user_data')!);
 
-        console.log("Usuarios: ", savedUserData.username);
-        console.log("Contraseñas: ", savedUserData.password);
+
+
+        //este es el encabezado de la peticion
+        const headers = new HttpHeaders({
+          'Content-Type': 'application/json'
+        });
+
+
+        const loginData = {
+          username: formData.username,
+          password: formData.password
+        };
+
+        console.log("Usuarios: ", formData.username);
+        console.log("Contraseñas: ", formData.password);
+        console.log(loginData);
 
 
         if (savedUserData) {
@@ -86,16 +100,39 @@ export class LoginPageComponent implements OnInit{
               formData.username === user.username &&
               formData.password === user.password
             ) {
+
+
               // Los datos coinciden, el usuario puede iniciar sesión
               console.log('Inicio de sesión exitoso');
-              // Aquí puedes agregar la lógica para redirigir al usuario a la página de inicio, establecer tokens, etc.
 
-              // Ejemplo:
-              this.router.navigate(['/inicio']);
+              this.http.post('http://localhost:3000/api/login', loginData, { headers }).subscribe(
+                (response: any) => {
 
-              this.openModalEjemplo(this.modalTemplate);
+                   //imprimimos los tokens para verificar que funcionen
+                   console.log('access_token:', response.token);
 
-              return; // Salimos del bucle ya que encontramos una coincidencia
+                    //redirigir al usuario
+                    this.router.navigate(['/inicio']);
+
+                    //Modal Confirmacion
+                    this.openModalEjemplo(this.modalTemplate);
+
+                    return;
+                },
+                //callback para manejar errores
+                (error) => {
+                    console.error('Error', error);
+
+                    // Restablecer el formulario para borrar los datos incorrectos
+                    this.loginForm.reset();
+
+                    // Mostrar el controlador error personalizado en verdadero
+                    this.showCustomError = true;
+
+                    return;
+                }
+            )
+
             }
           }
         }
